@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="images/portfolio.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --main-color: rgb(211, 231, 19);
+            --bg-color: rgb(30, 30, 30);
+        }
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: var(--main-color);
+            flex-direction: column;
+            text-align: center;
+        }
+        .arrow {
+            color: var(--main-color);
+            font-size: 50px;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+        .arrows-container {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .heading {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 5px;
+            bottom: 20%;
+            font-size: 50px;
+        }
+        .heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--main-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        .heading:hover::after {
+            transform: scaleX(1);
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            justify-items: center;
+            margin-bottom: 3%;
+        }
+        .mypro {
+            width: 150px;
+            height: 150px;
+            background: var(--bg-color);
+            border: 1px solid var(--main-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .mypro:hover {
+            overflow: hidden;
+            box-shadow: 0 8px 8px var(--main-color);
+        }
+        .proname {
+            font-size: 18px;
+            text-align: center;
+            color: var(--main-color);
+            z-index: 2;
+            transition: color 0.3s ease;
+        }
+        .mypro:hover .proname {
+            color: var(--bg-color);
+        }
+        .mypro a {
+            position: absolute;
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--bg-color);
+            background-color: var(--main-color);
+            padding: 5px 10px;
+            border-radius: 10px;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        .mypro:hover a {
+            opacity: 1;
+            transform: scale(0.9) translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            position: absolute;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="arrows-container">
+        <a href="skills.html" class="arrow"><i class="fa-solid fa-chevron-left"></i></a>
+        <a href="contact.html" class="arrow"><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <h1 class="heading">PROJECTS</h1>
+    <div class="projects">
+        <div class="mypro">
+            <span class="proname">E-COMMERCE</span>
+            <a href="https://keerthisureshbabu.github.io/e-commerce/" class="link">LINK</a>
+        </div>
+        <div class="mypro">
+            <span class="proname">CALCULATOR</span>
+            <a href="https://keerthisureshbabu.github.io/calculator/" class="link">LINK</a>
+        </div>
+        <div class="mypro">
+            <span class="proname">XO GAME IN PHP</span>
+            <a href="https://github.com/keerthisureshbabu/xo-php.git" class="link">LINK</a>
+        </div>
+        <div class="mypro">
+            <span class="proname">CHESS</span>
+            <a href="https://keerthisureshbabu.github.io/chess/" class="link">LINK</a>
+        </div>
+        <div class="mypro">
+            <span class="proname">XO GAME IN JAVA</span>
+            <a href="https://github.com/keerthisureshbabu/xo-java.git" class="link">LINK</a>
+        </div>
+        <div class="mypro">
+            <span class="proname">ROCK-PAPER-SCISSOR</span>
+            <a href="https://github.com/keerthisureshbabu/rock-paper-scissor.git" class="link">LINK</a>
+        </div>
+        <div class="mypro">
+            <span class="proname">PORTFOLIO</span>
+            <a href="index.html" class="link">LINK</a>
+        </div>
+    </div>
+</body>
+</html>

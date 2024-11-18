@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUCATION</title>
+    <link rel="icon" type="image/x-icon" href="images/portfolio.png">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --main-color: rgb(211, 231, 19);
+            --bg-color: rgb(30, 30, 30);
+            --card-bg: #2a2a2a;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--main-color);
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 100px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--main-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        h1:hover::after {
+            transform: scaleX(1);
+        }
+
+        .arrows-container {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .arrow {
+            color: var(--main-color);
+            font-size: 50px;
+            text-decoration: none;
+            margin: 0 25px;
+        }
+
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 800px;
+            padding: 20px;
+            margin-bottom: 80px;
+        }
+
+        .course {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .course::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--main-color);
+        }
+
+        .specify {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            color: var(--main-color);
+        }
+
+        .place {
+            font-size: 1em;
+            color: #a9a9a9;
+            margin-bottom: 10px;
+        }
+
+        .percent {
+            font-size: 1.2em;
+            color: var(--main-color);
+            margin-bottom: 10px;
+        }
+
+        .certificate {
+            display: inline-block;
+            color: var(--main-color);
+            padding: 8px 12px;
+            border: 2px solid var(--main-color);
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.4s ease, color 0.4s ease, border 0.4s ease;
+        }
+
+        .certificate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: var(--main-color);
+            transition: width 0.4s ease;
+            z-index: -1;
+        }
+
+        .certificate:hover {
+            color: var(--bg-color);
+        }
+
+        .certificate:hover::before {
+            width: 100%;
+        }
+
+        .course {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s forwards;
+        }
+
+        .course:nth-child(1) { animation-delay: 0.3s; }
+        .course:nth-child(2) { animation-delay: 0.6s; }
+        .course:nth-child(3) { animation-delay: 0.9s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="arrows-container">
+        <a href="about.html" class="arrow"><i class="fa-solid fa-chevron-left"></i></a>  
+        <a href="skills.html" class="arrow"><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <h1>EDUCATION</h1>
+    <div class="courses-container">
+        <div class="course">
+            <h3 class="specify">B.COM (IT)</h3>
+            <p class="place">RVS College of Arts and Science</p>
+            <h3 class="percent">82%</h3>
+            <a href="images/bcom.jpg" class="certificate">View Certificate</a>
+        </div>
+        <div class="course">
+            <h3 class="specify">Full Stack Development</h3>
+            <p class="place">Altalya Solutions Pvt. Ltd</p>
+            <h3 class="percent">Specific: PHP</h3>
+            <a href="images/altalya.jpg" class="certificate">View Certificate</a>
+        </div>
+    </div>
+</body>
+</html>

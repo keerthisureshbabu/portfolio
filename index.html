@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEERTHANA PORTFOLIO</title>
+    <link rel="icon" type="image/x-icon" href="images/portfolio.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --main-color: rgb(211, 231, 19);
+            --bg-color: rgb(30, 30, 30);
+        }
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            color: var(--main-color);
+            gap: 30px;
+        }
+        .header-letter {
+            font-size: 8em;
+        }
+        .header-round {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid var(--main-color);
+            position: relative;
+            overflow: hidden;
+        }
+        .onmove {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--main-color);
+            position: absolute;
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: top 0.1s ease, left 0.1s ease;
+        }
+        .arrow {
+            position: absolute;
+            bottom: 45%;
+            right: 50px;
+            color: var(--main-color);
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="header-letter">P</h1>
+        <div class="header-round"><div class="onmove"></div></div>
+        <h1 class="header-letter">RTF</h1>
+        <div class="header-round"><div class="onmove"></div></div>
+        <h1 class="header-letter">LI</h1>
+        <div class="header-round"><div class="onmove"></div></div>
+    </div>
+ <a href="heroin-section.html" class="arrow"><i class="fa-solid fa-chevron-right"></i></a>   
+
+    <script>
+        document.querySelectorAll('.header-round').forEach(round => {
+            const onMove = round.querySelector('.onmove');
+            round.addEventListener('mousemove', (e) => {
+                const rect = round.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                onMove.style.left = `${x}px`;
+                onMove.style.top = `${y}px`;
+            });
+        });
+    </script>
+</body>
+</html>

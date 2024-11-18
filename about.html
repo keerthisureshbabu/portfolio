@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="icon" type="image/x-icon" href="images/portfolio.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/> 
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --main-color: rgb(211, 231, 19);
+            --bg-color: rgb(30, 30, 30);
+        }
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: var(--main-color);
+            flex-direction: column;
+            text-align: center;
+        }
+        .arrow {
+            color: var(--main-color);
+            font-size: 50px;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+        .arrows-container {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .about{
+            display: inline-block;
+            position: relative;
+            padding-bottom: 5px;
+            margin-bottom: 300px;
+            font-size: 50px;
+        }
+
+        .about::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--main-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        .about:hover::after {
+            transform: scaleX(1);
+        }
+        .describe{
+            width: 70%;
+            font-size: 20px;
+            position: relative;
+            left: 15%;
+            bottom: 35%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="arrows-container">
+        <a href="heroin-section.html" class="arrow"><i class="fa-solid fa-chevron-left"></i></a>  
+        <a href="education.html" class="arrow"><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="abou">
+        <h1 class="about">ABOUT</h1>
+        <p class="describe">As a passionate and skilled Full-Stack Developer with expertise in PHP, 
+            I aim to leverage my knowledge of front-end and back-end technologies to create dynamic, user-friendly web applications.
+            My goal is to contribute to innovative projects by building robust, scalable, and efficient solutions, while continuously improving 
+            my skills in modern development practices and frameworks.</p>
+    </div>
+</body>
+</html>
